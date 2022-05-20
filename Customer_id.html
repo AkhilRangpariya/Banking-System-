@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <link rel="stylesheet" href="./Customer_id.css">
+
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+
+
+    <!-- google font    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400&display=swap"
+        rel="stylesheet">
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- nav bar starts -->
+    <nav class="navbar navbar-expand-lg navbar-primary   fixed-top bg-light ">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="./Index.html">Apna Bank</a>
+
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav ">
+                    <a class="nav-link " aria-current="page" href="./Index.html">Home</a>
+                    <a class="nav-link" href="./About.html">About</a>
+                    <a class="nav-link active" href="./Customer_id.html">Customers</a>
+                    <a class="nav-link active" href="./Customer_id.html">Transaction</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <div class="my-info">
+        <br>
+        <br>
+        <h2> Well Come Akhiless!</h2>
+        <h4>Your Bank Balance : ₹ <span id="myAccountBalance">50000</span></h4>
+        <br>
+        <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+        <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory"> All Transactions </a>
+    </div>
+
+
+
+
+
+    <!-- process to  send money -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="text" id="enterName" onkeyup="this.value = this.value.toLowerCase();"
+                                class="form-control" placeholder="Recipient's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">@email.com</span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">₹</span>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                        Money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol id="transaction-history-body">
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Cuatomer data for transaction -->
+    <!-- table  -->
+    <div class="container">
+        <center>
+            <table class="table table-hover">
+
+                <tr class="table-heading  ">
+                    <th scope="col">ID No.</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">E-mail address</th>
+                    <th scope="col">Bank Balance(in ₹)</th>
+                </tr>
+
+                <tr class="row-light">
+                    <td scope="row">1</td>
+                    <td>Chhagan</td>
+                    <td>chhagan@email.com</td>
+                    <td>
+                        <p id="chhaganBankBalance">4500</p>
+                    </td>
+                </tr>
+                <tr class="row-dark">
+                    <td scope="row">2</td>
+                    <td>Mukesh</td>
+                    <td>mukesh@email.com</td>
+                    <td>
+                        <p id="mukeshBankBalance">2400</p>
+                    </td>
+                </tr>
+                <tr class="row-light">
+                    <td scope="row">3</td>
+                    <td>Abhinav</td>
+                    <td>abhinav@email.com</td>
+                    <td>
+                        <p id="abhinavBankBalance">3400</p>
+                    </td>
+                </tr>
+                <tr class="row-dark">
+                    <td scope="row">4</td>
+                    <td>Rakesh</td>
+                    <td>rakesh@email.com</td>
+                    <td>
+                        <p id="rakeshBankBalance">4000</p>
+                    </td>
+                </tr>
+                <tr class="row-light">
+                    <td scope="row">5</td>
+                    <td>Chhavee</td>
+                    <td>chhavee@email.com</td>
+                    <td>
+                        <p id="chhaveeBankBalance">600</p>
+                    </td>
+                </tr>
+                <tr class="row-dark">
+                    <td scope="row">6</td>
+                    <td>Sonali</td>
+                    <td>sonali@email.com</td>
+                    <td>
+                        <p id="sonaliBankBalance">12003</p>
+                    </td>
+                </tr>
+                <tr class="row-light">
+                    <td>7</td>
+                    <td>Ankita</td>
+                    <td>ankita@email.com</td>
+                    <td>
+                        <p id="ankitaBankBalance">56500</p>
+                    </td>
+                </tr>
+                <tr class="row-dark">
+                    <td scope="row">8</td>
+                    <td>Avinash</td>
+                    <td>avinash@email.com</td>
+                    <td>
+                        <p id="avinashBankBalance">3603</p>
+                    </td>
+                </tr>
+                <tr class="row-light">
+                    <td scope="row">9</td>
+                    <td>Ashnur</td>
+                    <td>ashnur@email.com</td>
+                    <td>
+                        <p id="ashnurBankBalance">356003</p>
+                    </td>
+                </tr>
+                <tr class="row-dark">
+                    <td scope="row">10</td>
+                    <td>Pavan</td>
+                    <td>pavan@email.com</td>
+                    <td>
+                        <p id="pavanBankBalance">3503</p>
+                    </td>
+                </tr>
+                <tr class="row-light">
+                    <td scope="row">11</td>
+                    <td>Salu</td>
+                    <td>salu@email.com</td>
+                    <td>
+                        <p id="saluBankBalance">300563</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer id="footer" class="d-flex justify-content-around align-items-center fixed-bottom bg-info">
+        <p><a href="./About.html" class="font-weight-bold ">contact us</a></p>
+        <p>
+            <a href="https://www.facebook.com/" class="active fa fa-facebook-square"></a>
+            <a href="https://www.instagram.com/" class="active fa fa-instagram"></a>
+            <a href="https://www.teitter.com/" class="active fa fa-twitter"></a>
+            <a href="https://github.com/" class="active fa fa-linkedin"></a>
+            <a href="https://youtube.com/" class="active fa fa-youtube"></a>
+        </p>
+        <p class="font-weight-bold ">© Copyright 2022 Apna Bank.</p>
+    </footer>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>Basic Banking System</title>
+    <link rel="stylesheet" href="./style.css">
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400&display=swap"
+        rel="stylesheet">
+
+    <!-- For Social media icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<body onload="loader()">
+
+    <div id="loading"></div>
+
+    <!-- nav bar starts -->
+    <nav class="navbar navbar-expand-lg navbar-primary   fixed-top bg-light ">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="./Index.html">Apna Bank</a>
+
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav ">
+                    <a class="nav-link active " aria-current="page" href="./Index.html">Home</a>
+                    <a class="nav-link" href="./About.html">About</a>
+                    <a class="nav-link" href="./Customer_id.html">Customers</a>
+                    <a class="nav-link" href="./Customer_id.html">Transaction</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Home Page Main Body -->
+    <section id="features" class="white-section">
+        <a href="About.html"></a>
+        <button type="button" class="btn btn-dark btn-lg">
+            <h4 class="main ">The Apna Bank</h4>
+        </button></a><br><br>
+        <h4 class="text btn btn-secondary  btn-lg disabled">Digital Payment Services</h4><br><br>
+        <h4 class="text btn btn-secondary  btn-lg disabled">Choose Your Options</h4><br><br>
+        <a href="Customer_id.html"><button type="button" class="btn btn-dark btn-lg ">View
+                Customers</button></a>
+        <a href="Customer_id.html"><button type="button" class="btn btn-dark btn-lg"> Transaction
+                History</button></a>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer id="footer" class="d-flex justify-content-around align-items-center fixed-bottom bg-info">
+        <p><a href="./About.html" class="font-weight-bold ">contact us</a></p>
+        <p>
+            <a href="https://www.facebook.com/" class="active fa fa-facebook-square"></a>
+            <a href="https://www.instagram.com/" class="active fa fa-instagram"></a>
+            <a href="https://www.teitter.com/" class="active fa fa-twitter"></a>
+            <a href="https://github.com/" class="active fa fa-linkedin"></a>
+            <a href="https://youtube.com/" class="active fa fa-youtube"></a>
+        </p>
+        <p class="font-weight-bold ">© Copyright 2022 Apna Bank.</p>
+    </footer>
+
+
+
+    <!-- JS for user frandlly -->
+
+    <script>
+        var preloader = document.getElementById("loading");
+        function loader() {
+            preloader.style.display = 'none';
+        }
+    </script>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+</body>
+
+</html>

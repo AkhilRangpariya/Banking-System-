@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../banking system/images.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: initial;
+}
+
+.navbar-nav>a:hover {
+    color: blue;
+    font-weight: 600;
+    font-size: x-large;
+}
+
+.active {
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+.my-info {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
+}
+
+.btn-info {
+    padding: 1rem 1.2rem;
+    font-size: small;
+    color: black !important;
+    margin-left: 5px;
+    padding: 1.75rem;
+    transition: all 0.3s;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+.btn-info:hover {
+    border: 3px solid rgb(57, 12, 218) !important;
+    color: black !important;
+    border-radius: 25px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+.table {
+    width: 70%;
+    border: 4px solid black !important;
+    border-radius: 10px !important;
+
+}
+
+
+.table-heading {
+    background-color: rgb(51, 32, 219);
+    color: white;
+    text-align: center;
+}
+
+.row-light {
+    background-color: #9cbcec;
+    text-align: center;
+}
+
+.row-dark {
+    background-color: white;
+    text-align: center;
+
+}
+
+
+
+
+
+#footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 2px 2px;
+    text-align: center;
+}
+
+#footer>p>a {
+    text-decoration: none !important;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+#footer>p>a:hover {
+    color: blue;
+    font-size: x-large;
+}

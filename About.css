@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("./download.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.navbar-nav>a:hover {
+    color: blue;
+    font-weight: 600;
+    font-size: x-large;
+}
+
+
+.bankinfo>ul>li {
+    margin: 80px 0;
+}
+
+.bankinfo>ul>li>p {
+    font-weight: 700;
+}
+
+#footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 2px 2px;
+    text-align: center;
+}
+
+#footer>p>a {
+    text-decoration: none !important;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+#footer>p>a:hover {
+    color: blue;
+    font-size: x-large;
+}
